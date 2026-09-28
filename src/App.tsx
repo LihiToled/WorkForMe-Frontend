@@ -1,28 +1,26 @@
-import { useState } from 'react'
-import './App.css'
+// src/App.tsx
+import SideMenu from './components/SideMenu';
+import './App.css'; 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const sideMenuLinks = [
+    { label: 'Dashboard', url: '/dashboard' },
+    { label: 'Processes', url: '/processes' },
+    { label: 'Resume', url: '/resume' },
+  ];
 
   return (
-    <>
-      <section id="center">
-        <div>
-          <h1>My React App</h1>
-          <p>
-            Start building your project here!
-          </p>
+    <div className="app-layout">
+      {/* side menu*/}
+      <SideMenu links={sideMenuLinks} /> 
+      
+      {}
+      <main className="main-content">
+        <div className="centered-container">
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-    </>
-  )
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
