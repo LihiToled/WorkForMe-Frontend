@@ -1,24 +1,26 @@
-import './App.css'
+// src/App.tsx
+import SideMenu from './components/SideMenu';
+import './App.css'; 
 
 function App() {
-  return (
-    <div className="layout-wrapper">
-      {}
-      <aside className="sidebar">
-        <h2 className="logo">WorkForMe</h2>
-        <nav className="nav-links">
-          <a href="#" className="active">Dashboard</a>
-          <a href="#">Processes</a>
-          <a href="#">Resume</a>
-        </nav>
-      </aside>
+  const sideMenuLinks = [
+    { label: 'Dashboard', url: '/dashboard' },
+    { label: 'Processes', url: '/processes' },
+    { label: 'Resume', url: '/resume' },
+  ];
 
+  return (
+    <div className="app-layout">
+      {/* side menu*/}
+      <SideMenu links={sideMenuLinks} /> 
+      
       {}
       <main className="main-content">
-        <h1>Dashboard</h1>
+        <div className="centered-container">
+        </div>
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
