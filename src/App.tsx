@@ -1,27 +1,23 @@
-import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div>
-          <h1>My React App</h1>
-          <p>
-            Start building your project here!
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-    </>
+    <div className="layout-wrapper">
+      {}
+      <aside className="sidebar">
+        <h2 className="logo">WorkForMe</h2>
+        <nav className="nav-links">
+          <a href="#" className="active">Dashboard</a>
+          <a href="#">Processes</a>
+          <a href="#">Resume</a>
+        </nav>
+      </aside>
+
+      {}
+      <main className="main-content">
+        <h1>Dashboard</h1>
+      </main>
+    </div>
   )
 }
 
