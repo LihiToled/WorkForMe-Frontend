@@ -1,7 +1,6 @@
 import React from 'react';
 import './SideMenu.css'; 
 
-
 interface NavLink {
   label: string;
   url: string;
