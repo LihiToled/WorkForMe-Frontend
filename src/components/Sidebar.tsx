@@ -1,23 +1,20 @@
 import React from 'react';
-import './Sidebar.css'; 
+import './Sidebar.css';
 
-interface NavLink {
-  label: string;
-  url: string;
-  active?: boolean;
-}
+type TabType = 'dashboard' | 'processes' | 'resume';
 
 interface SidebarProps {
-  links?: NavLink[];
+  activeTab: TabType;
+  onSelectTab: (tab: TabType) => void;
 }
 
-const defaultLinks: NavLink[] = [
-  { label: 'Dashboard', url: '/dashboard', active: true },
-  { label: 'Processes', url: '/processes' },
-  { label: 'Resume', url: '/resume' },
+const links: { label: string; id: TabType }[] = [
+  { label: 'Dashboard', id: 'dashboard' },
+  { label: 'Processes', id: 'processes' },
+  { label: 'Resume', id: 'resume' },
 ];
 
-const Sidebar: React.FC<SidebarProps> = ({ links = defaultLinks }) => {
+const Sidebar: React.FC<SidebarProps> = ({ activeTab, onSelectTab }) => {
   return (
     <aside className="sidebar">
       <div className="sidebar-title">
@@ -25,14 +22,15 @@ const Sidebar: React.FC<SidebarProps> = ({ links = defaultLinks }) => {
       </div>
       <nav className="sidebar-nav">
         <ul className="nav-list">
-          {links.map((link, index) => (
-            <li key={index} className="nav-item">
-              <a 
-                href={link.url} 
-                className={`nav-link ${link.active ? 'active' : ''}`}
+          {links.map((link) => (
+            <li key={link.id} className="nav-item">
+              <button
+                type="button"
+                onClick={() => onSelectTab(link.id)}
+                className={`nav-link ${activeTab === link.id ? 'active' : ''}`}
               >
                 {link.label}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
