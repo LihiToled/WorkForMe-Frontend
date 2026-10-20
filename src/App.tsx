@@ -1,4 +1,4 @@
-import SideMenu from './components/SideMenu';
+import Sidebar from './components/Sidebar';
 import './App.css'; 
 
 function App() {
@@ -11,8 +11,7 @@ function App() {
   return (
     <div className="app-layout">
       {}
-      <SideMenu links={sideMenuLinks} /> 
-      
+      <Sidebar links={sideMenuLinks} /> 
       {}
       <main className="main-content">
         <div className="centered-container">
