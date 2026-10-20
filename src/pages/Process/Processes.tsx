@@ -1,13 +1,18 @@
 import React from 'react';
 import './Processes.css';
 
-const Processes: React.FC = () => {
+interface ProcessesProps {
+  onAddProcess?: () => void;
+}
+
+const Processes: React.FC<ProcessesProps> = ({ onAddProcess }) => {
   return (
     <main className="processes-container">
       <h1 className="processes-title">Processes</h1>
       
       <div className="processes-content">
-        <button className="add-process-btn">
+        {/* Trigger navigation on click */}
+        <button type="button" className="add-process-btn" onClick={onAddProcess}>
           + ADD PROCESS
         </button>
 

@@ -29,7 +29,7 @@
 }
 
 .add-process-btn {
-  background-color: #921d98;
+  background-color: #1976d2;
   color: #ffffff;
   font-size: 13px;
   font-weight: 700;
@@ -43,7 +43,7 @@
 }
 
 .add-process-btn:hover {
-  background-color: #b549ba;
+  background-color: #1565c0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 

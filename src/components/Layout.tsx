@@ -2,23 +2,35 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import Dashboard from '../pages/Dashboard/Dashboard';
 import Processes from '../pages/Process/Processes';
+import NewProcess from '../pages/Process/NewProcess';
 import './Layout.css';
 
-type TabType = 'dashboard' | 'processes' | 'resume';
+export type TabType = 'dashboard' | 'processes' | 'resume' | 'new-process';
 
 const Layout: React.FC = () => {
-  // Sets 'processes' as default visible page
   const [activeTab, setActiveTab] = useState<TabType>('processes');
 
   return (
     <div className="app-layout">
-      {/* Sidebar handles clicking and updating activeTab */}
-      <Sidebar activeTab={activeTab} onSelectTab={setActiveTab} />
+      {/* Keep 'processes' highlighted in the sidebar even when on 'new-process' */}
+      <Sidebar 
+        activeTab={activeTab === 'new-process' ? 'processes' : activeTab} 
+        onSelectTab={setActiveTab} 
+      />
 
-      { }
       <div style={{ flex: 1 }}>
         {activeTab === 'dashboard' && <Dashboard />}
-        {activeTab === 'processes' && <Processes />}
+        
+        {/* Pass trigger to switch view to 'new-process' */}
+        {activeTab === 'processes' && (
+          <Processes onAddProcess={() => setActiveTab('new-process')} />
+        )}
+        
+        {/* Pass trigger to return back to 'processes' */}
+        {activeTab === 'new-process' && (
+          <NewProcess onBack={() => setActiveTab('processes')} />
+        )}
+
         {activeTab === 'resume' && (
           <div style={{ padding: '40px' }}>
             <h1>Resume Page</h1>
