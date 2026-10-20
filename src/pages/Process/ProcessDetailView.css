@@ -1,0 +1,103 @@
+/* ProcessDetailView.css */
+
+.process-detail-container {
+  flex: 1;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main centered page header */
+.process-detail-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 32px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+/* Top action buttons wrapper (BACK and EDIT) */
+.top-actions {
+  display: flex;
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto 32px auto;
+}
+
+/* Primary blue buttons (BACK, EDIT, CANCEL, SAVE) */
+.btn-primary {
+  background-color: #1976d2;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 22px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1565c0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Centered content wrapper */
+.process-detail-content {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Single field entry label/value wrapper */
+.detail-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #222222;
+}
+
+/* Inline row wrapper (for Date applied & Resume status) */
+.detail-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Large description display/input box */
+.description-box {
+  width: 100%;
+  height: 160px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 12px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: #333333;
+}
+
+/* Bottom action buttons wrapper (CANCEL and SAVE) */
+.bottom-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 16px;
+}
